@@ -1,0 +1,13 @@
+[Unit]
+Description=Control NVIDIA GPU Fan Curve
+
+[Service]
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/run/user/1000/gdm/Xauthority"
+ExecStart=/usr/local/bin/fan-control pcurve
+ExecStop=killall -9 fan-control
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
