@@ -24,7 +24,7 @@ fanConfig="$(getent passwd $(id -un) | cut -d ':' -f6)/.fancontrol"
 defaultSpeed=60
 
 # Persistent Fan Curve Refresh Interval                                  {{{1
-refresh=30
+refresh=10
 
 # Fan Curve Settings                                                     {{{1
 # Day Curve Start Time (24 Hour Time)
@@ -33,7 +33,7 @@ dCurveStart=12
 nCurveStart=23
 # Night Curve Enable/Disable (true/false)
 # Disable if you don't want seperate day and night curves
-nCurveEnabled=true
+nCurveEnabled=false
 
 # Fan Curve Temperature Thresholds (In Celsius)                          {{{2
 # The temperature threshold is the temperature at which the the script
@@ -60,9 +60,9 @@ tempThresh[4]=30   # <-- Apply curve[4] if hotter than
 dCurve[0]=70  nCurve[0]=60
 dCurve[1]=60  nCurve[1]=50
 dCurve[2]=50  nCurve[2]=40
-dCurve[3]=40  nCurve[3]=30
-dCurve[4]=30  nCurve[4]=20
-dCurve[5]=20  nCurve[5]=0
+dCurve[3]=0  nCurve[3]=30
+dCurve[4]=0  nCurve[4]=20
+dCurve[5]=0  nCurve[5]=0
 
 ##### End Configurable Settings #####                                    {{{1
 # Export Display (For Headless Use)                                      {{{1
