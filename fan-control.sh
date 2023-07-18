@@ -93,7 +93,7 @@ runCurve()
     currentSpeed=($(nvidia-smi --query-gpu=fan.speed --format=csv,noheader | awk '{print $1}'))
     unset IFS
 
-    [ $nCurveEnabled ] && cTime=$(date +'%H') || cTime=$dCurveStart # Get the time
+    [ $nCurveEnabled == true ] && cTime=$(date +'%H') || cTime=$dCurveStart # Get the time
 
     # Checks time to apply day or night curve
     [ $cTime -lt $dCurveStart -o $cTime -ge $nCurveStart ] && curve=("${nCurve[@]}") || curve=("${dCurve[@]}")
