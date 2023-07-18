@@ -16,8 +16,9 @@ install:
 
 service:
 	$(INSTALL) -Dm 0755 $(FAN_CONTROL_SERVICE) /etc/systemd/system/$(FAN_CONTROL_SERVICE)
+	systemctl daemon-reload
 	systemctl enable $(FAN_CONTROL_SERVICE)
-	systemctl start $(FAN_CONTROL_SERVICE)
+	systemctl restart $(FAN_CONTROL_SERVICE)
 
 .PHONY: uninstall
 uninstall:
